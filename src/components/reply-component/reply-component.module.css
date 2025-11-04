@@ -1,0 +1,31 @@
+.reply_container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: purple;
+  font-weight: bold;
+  padding: 4px;
+  border-radius: 4px;
+  gap: 5px;
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    background-color: rgba(239, 193, 239, 0.2);
+  }
+  p {
+    margin: 0;
+  }
+}
+.reply_icon {
+  height: 18px;
+  width: 18px;
+}
+@media (max-width: 550px) {
+  .reply_container {
+    font-size: small;
+  }
+  .reply_icon {
+    height: 16px;
+    width: 16px;
+  }
+}

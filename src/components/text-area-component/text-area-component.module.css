@@ -1,0 +1,10 @@
+.textarea {
+  width: 95%;
+  resize: none;
+  padding: 5px;
+  border-radius: 4px;
+  height: 5lh;
+  box-sizing: content-box;
+  border-color: lightgray;
+  outline-color: lightgray;
+}

@@ -1,0 +1,26 @@
+.vote_container {
+  width: fit-content;
+  height: fit-content;
+  background: #ecf0f1;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  .count {
+    color: purple;
+    font-weight: bold;
+    margin: 0;
+    user-select: none;
+  }
+}
+@media (max-width: 550px) {
+  .vote_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 25px;
+  }
+}

@@ -1,0 +1,35 @@
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+:root {
+  font-family: Arvo;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: "Arvo";
+  src: url("/fonts/Arvo-Regular.ttf") format("truetype");
+}
+body {
+  box-sizing: border-box;
+  background-color: #ecf0f1;
+  padding: min(5vw, 2rem);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100dvh;
+  width: 100%;
+}
+.main {
+  inline-size: min(700px, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
