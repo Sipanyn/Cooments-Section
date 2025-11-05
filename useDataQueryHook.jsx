@@ -5,7 +5,7 @@ export default function useDataQueryHook() {
   const commentQuery = useQuery({
     queryKey: ["comment"],
     queryFn: async () => {
-      let { data, error } = await supabase.from("comment").select("*");
+      let { data, error } = await supabase.from("comments").select("*");
       if (error) {
         console.log(error);
       } else {
