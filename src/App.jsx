@@ -1,34 +1,23 @@
 import "./App.css";
 import CommentList from "./components/comment-list/comment-list";
 import MainTextBox from "./components/main-text-box/main-text-box";
-import supabase from "../supabase-client";
-import { useSupa } from "./supa-Store";
+import useDataQueryHook from "../useDataQueryHook";
 import { useEffect } from "react";
+import { useSupa } from "./supa-Store";
 function App() {
+  const { commentQuery, replyQuery } = useDataQueryHook();
   const setData = useSupa((state) => state.setData);
   const setReplies = useSupa((state) => state.setReplies);
-  async function fetchData() {
-    let { data, error } = await supabase.from("comments").select("*");
-    if (error) {
-      console.log(error);
-    } else {
-      // console.log(data);
-      setData(data);
-    }
-  }
-  async function fetchReplies() {
-    let { data, error } = await supabase.from("replies").select("*");
-    if (error) {
-      console.log(error);
-    } else {
-      // console.log(data);
-      setReplies(data);
-    }
-  }
   useEffect(() => {
-    fetchData();
-    fetchReplies();
-  }, []);
+    if (replyQuery && commentQuery.data) {
+      setReplies(replyQuery.data);
+      setData(commentQuery.data);
+    }
+  });
+
+  if (commentQuery.isLoading && replyQuery.isLoading) {
+    return <p className="isloading">is loading</p>;
+  }
 
   return (
     <div className="main">
