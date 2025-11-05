@@ -4,6 +4,8 @@ import MainTextBox from "./components/main-text-box/main-text-box";
 import useDataQueryHook from "../useDataQueryHook";
 import { useEffect } from "react";
 import { useSupa } from "./supa-Store";
+import { SvgSpinners12DotsScaleRotate } from "./components/spinner/spinner";
+import QueryErrorMessage from "./components/query-error-message/query-error-message";
 function App() {
   const { commentQuery, replyQuery } = useDataQueryHook();
   const setData = useSupa((state) => state.setData);
@@ -16,7 +18,10 @@ function App() {
   });
 
   if (commentQuery.isLoading && replyQuery.isLoading) {
-    return <p className="isloading">is loading</p>;
+    return <SvgSpinners12DotsScaleRotate />;
+  }
+  if (replyQuery.isError || commentQuery.isError) {
+    return <QueryErrorMessage />;
   }
 
   return (

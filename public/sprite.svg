@@ -2,4 +2,16 @@
 <symbol id="reply_icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
 	<path fill="currentColor" d="M8.309 189.836L184.313 37.851C199.719 24.546 224 35.347 224 56.015v80.053c160.629 1.839 288 34.032 288 186.258c0 61.441-39.581 122.309-83.333 154.132c-13.653 9.931-33.111-2.533-28.077-18.631c45.344-145.012-21.507-183.51-176.59-185.742V360c0 20.7-24.3 31.453-39.687 18.164l-176.004-152c-11.071-9.562-11.086-26.753 0-36.328" />
 </symbol>
+<symbol id="wrong_icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24">
+	<defs>
+		<path id="SVGzqMQVdtE" d="M.75 12a11.25 11.25 0 1 0 22.5 0a11.25 11.25 0 0 0-22.5 0m6-3.75h3m-1.5 1.5v-3m6 1.5h3m-1.5 1.5v-3" />
+		<path id="SVGHGSBDebM" d="M6.75 17.25c0-2.564 1.192-3.545 2.864-3.545c2.9 0 1.871 3.545 4.772 3.545c1.674 0 2.864-.982 2.864-3.545" />
+	</defs>
+	<g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+		<use href="#SVGzqMQVdtE" />
+		<use href="#SVGHGSBDebM" />
+		<use href="#SVGzqMQVdtE" />
+		<use href="#SVGHGSBDebM" />
+	</g>
+</symbol>
 </svg>
