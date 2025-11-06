@@ -5,11 +5,13 @@ export default function useDataQueryHook() {
   const commentQuery = useQuery({
     queryKey: ["comment"],
     queryFn: async () => {
-      let { data, error } = await supabase.from("comments").select("*");
+      let { data, error } = await supabase
+        .from("comments")
+        .select("*")
+        .order("created_at", { ascending: true });
       if (error) {
         console.log(error);
       } else {
-        // console.log(data);
         return data;
       }
     },
@@ -22,7 +24,17 @@ export default function useDataQueryHook() {
       if (error) {
         console.log(error);
       } else {
-        // console.log(data);
+        return data;
+      }
+    },
+  });
+  const UserQuery = useQuery({
+    queryKey: ["user"],
+    queryFn: async () => {
+      let { data, error } = await supabase.from("user").select("*");
+      if (error) {
+        console.log(error);
+      } else {
         return data;
       }
     },
@@ -30,5 +42,6 @@ export default function useDataQueryHook() {
   return {
     commentQuery,
     replyQuery,
+    UserQuery,
   };
 }

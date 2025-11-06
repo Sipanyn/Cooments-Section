@@ -7,20 +7,22 @@ import { useSupa } from "./supa-Store";
 import { SvgSpinners12DotsScaleRotate } from "./components/spinner/spinner";
 import QueryErrorMessage from "./components/query-error-message/query-error-message";
 function App() {
-  const { commentQuery, replyQuery } = useDataQueryHook();
+  const { commentQuery, replyQuery, UserQuery } = useDataQueryHook();
   const setData = useSupa((state) => state.setData);
   const setReplies = useSupa((state) => state.setReplies);
+  const setUser = useSupa((state) => state.setUser);
   useEffect(() => {
     if (replyQuery && commentQuery.data) {
       setReplies(replyQuery.data);
       setData(commentQuery.data);
+      setUser(UserQuery.data);
     }
   });
 
-  if (commentQuery.isLoading && replyQuery.isLoading) {
+  if (commentQuery.isLoading && replyQuery.isLoading && UserQuery.isLoading) {
     return <SvgSpinners12DotsScaleRotate />;
   }
-  if (replyQuery.isError || commentQuery.isError) {
+  if (replyQuery.isError || commentQuery.isError || UserQuery.isLoading) {
     return <QueryErrorMessage />;
   }
 

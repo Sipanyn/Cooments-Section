@@ -1,7 +1,20 @@
 import styles from "./send-button-component.module.css";
 
-const SendButtonComponent = () => {
-  return <button className={styles.btn}>SEND</button>;
+const SendButtonComponent = ({
+  textBoxValue,
+  sendComment,
+  isPending,
+  error,
+}) => {
+  return (
+    <button
+      onClick={() => sendComment(textBoxValue)}
+      disabled={textBoxValue.trim().length === 0}
+      className={styles.btn}
+    >
+      {isPending ? "SENDING..." : "SEND"}
+    </button>
+  );
 };
 
 export default SendButtonComponent;
