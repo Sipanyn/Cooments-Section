@@ -26,6 +26,7 @@
   .reply_container {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    padding: 7px 10px;
     .VoteComponent {
       padding-top: 0px;
       grid-row-start: 2;

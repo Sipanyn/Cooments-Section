@@ -4,9 +4,12 @@ import UserInfo from "../user-info/user-info";
 import styles from "../comment-component/comment-component.module.css";
 import ReplyList from "../reply-list/reply-list";
 import { useSupa } from "../../supa-Store";
+import CustomTextBox from "../custom-text-box/custom-text-box";
 
 const CommentComponent = ({ item }) => {
   const supa_replies = useSupa((state) => state.supa_replies);
+  const setSelectedComment = useSupa((state) => state.setSelectedComment);
+  const selectedComment = useSupa((state) => state.selectedComment);
   return (
     <>
       <div className={styles.comment_container}>
@@ -17,14 +20,23 @@ const CommentComponent = ({ item }) => {
           <UserInfo item={item} />
         </div>
         <div className={styles.ReplyComponent}>
-          <ReplyComponent />
+          <ReplyComponent item={item} setSelectedComment={setSelectedComment} />
         </div>
       </div>
-      {supa_replies[0]?.map((rply) => {
-        return (
-          rply.comment_id === item.id && <ReplyList rply={rply} key={rply.id} />
-        );
-      })}
+      {selectedComment?.id === item.id && (
+        <div className={styles.CustomTextBox}>
+          <CustomTextBox />
+        </div>
+      )}
+      <div className={styles.rplyListContainer}>
+        {supa_replies[0]?.map((rply) => {
+          return (
+            rply.comment_id === item.comment_id && (
+              <ReplyList rply={rply} key={rply.id} />
+            )
+          );
+        })}
+      </div>
     </>
   );
 };
