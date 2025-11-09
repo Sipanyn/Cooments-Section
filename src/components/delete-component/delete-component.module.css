@@ -1,0 +1,27 @@
+.deleteComponent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #e3301c;
+  gap: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  height: fit-content;
+  -webkit-tap-highlight-color: transparent;
+  p {
+    margin: 0;
+  }
+  &:hover {
+    color: #feb9bc;
+  }
+
+  .delete_icon {
+    height: 15px;
+    width: 15px;
+  }
+}
+@media (max-width: 550px) {
+  .deleteComponent {
+    font-size: small;
+  }
+}

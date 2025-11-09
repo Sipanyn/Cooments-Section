@@ -7,6 +7,7 @@ export const useSupa = create((set) => ({
   supa_user: [],
   selectedComment: null,
   selectedRply: null,
+
   setData: (item) => {
     set({
       supa_data: [item],

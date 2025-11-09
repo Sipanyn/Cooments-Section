@@ -1,0 +1,27 @@
+.editComponent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: black;
+  gap: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  height: fit-content;
+  -webkit-tap-highlight-color: transparent;
+  p {
+    margin: 0;
+  }
+  &:hover {
+    color: rgb(144, 142, 142);
+  }
+
+  .edit_icon {
+    height: 15px;
+    width: 15px;
+  }
+}
+@media (max-width: 550px) {
+  .editComponent {
+    font-size: small;
+  }
+}

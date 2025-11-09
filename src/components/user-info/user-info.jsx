@@ -12,11 +12,13 @@ const UserInfo = ({ item, rply }) => {
         <div className={styles.user_image_container}>
           <img src={item?.image_url || rply?.image_url} alt="user" />
         </div>
-        <p className={styles.user_name}>
-          {item?.username}
-          {rply?.username}
-        </p>
-        <p className={styles.date}>{formattedDate}</p>
+        <div className={styles.name_date}>
+          <p className={styles.user_name}>
+            {item?.username}
+            {rply?.username}
+          </p>
+          <p className={styles.date}>{formattedDate}</p>
+        </div>
       </div>
       <CommentContent item={item} rply={rply} />
     </div>

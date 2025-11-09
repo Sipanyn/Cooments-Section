@@ -1,16 +1,17 @@
 .reply_container {
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: flex-end;
-  color: purple;
+  color: #8207db;
   font-weight: bold;
   padding: 4px;
   border-radius: 4px;
   gap: 5px;
   cursor: pointer;
   user-select: none;
+  width: fit-content;
   &:hover {
-    background-color: rgba(239, 193, 239, 0.2);
+    background-color: rgba(153, 113, 182, 0.2);
   }
   p {
     margin: 0;

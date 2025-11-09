@@ -5,10 +5,13 @@ import styles from "../comment-component/comment-component.module.css";
 import ReplyList from "../reply-list/reply-list";
 import { useSupa } from "../../supa-Store";
 import CustomTextBox from "../custom-text-box/custom-text-box";
+import DeleteComponent from "../delete-component/delete-component";
+import EditComponent from "../edit-component/edit-component";
 
 const CommentComponent = ({ item }) => {
   const supa_replies = useSupa((state) => state.supa_replies);
   const setSelectedComment = useSupa((state) => state.setSelectedComment);
+  const setLastSelected = useSupa((state) => state.setLastSelected);
   const selectedComment = useSupa((state) => state.selectedComment);
   return (
     <>
@@ -19,8 +22,18 @@ const CommentComponent = ({ item }) => {
         <div className={styles.UserInfo}>
           <UserInfo item={item} />
         </div>
+        {item.username === "Tom Rey" && (
+          <div className={styles.delete_edit}>
+            <DeleteComponent item={item} />
+            <EditComponent />
+          </div>
+        )}
         <div className={styles.ReplyComponent}>
-          <ReplyComponent item={item} setSelectedComment={setSelectedComment} />
+          <ReplyComponent
+            item={item}
+            setSelectedComment={setSelectedComment}
+            setLastSelected={setLastSelected}
+          />
         </div>
       </div>
       {selectedComment?.id === item.id && (

@@ -19,12 +19,32 @@
         border-radius: 50%;
       }
     }
-    .user_name {
-      font-weight: bold;
+    .name_date {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
+      .user_name {
+        font-weight: bold;
+      }
+      .date {
+        color: gainsboro;
+        font-size: x-small;
+      }
     }
-    .date {
-      color: gainsboro;
-      font-size: x-small;
+  }
+}
+@media (max-width: 550px) {
+  .userInfo_container {
+    .info {
+      margin-bottom: 8px;
+      .name_date {
+        flex-direction: column;
+        gap: 2px;
+        p {
+          margin: 0;
+        }
+      }
     }
   }
 }

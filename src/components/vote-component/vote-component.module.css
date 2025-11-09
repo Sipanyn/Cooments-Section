@@ -10,7 +10,7 @@
   align-items: center;
   gap: 8px;
   .count {
-    color: purple;
+    color: #8207db;
     font-weight: bold;
     margin: 0;
     user-select: none;

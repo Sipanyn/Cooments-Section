@@ -49,3 +49,15 @@ body {
     height: 30px;
   }
 }
+.my-custom-popup {
+  inline-size: min(500px, 85%);
+}
+
+@media (max-width: 550px) {
+  .swal-title {
+    font-size: 18px;
+  }
+  .my-custom-popup {
+    font-size: 14px;
+  }
+}

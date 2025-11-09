@@ -1,4 +1,3 @@
-import { useState } from "react";
 import SendButtonComponent from "../send-button-component/send-button-component";
 import TextAreaComponent from "../text-area-component/text-area-component";
 import styles from "./main-text-box.module.css";

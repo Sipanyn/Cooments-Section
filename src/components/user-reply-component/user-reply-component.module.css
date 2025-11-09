@@ -15,11 +15,20 @@
   .UserInfo {
   }
   .ReplyComponent {
+    display: flex;
+    justify-content: end;
     height: 28px;
+    grid-column-start: 3;
   }
 
   .CommentContent {
     grid-column: span 2;
+  }
+  .delete_edit {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 16px;
   }
 }
 @media (max-width: 550px) {
@@ -40,7 +49,7 @@
       align-items: end;
     }
     .UserInfo {
-      grid-column: span 3;
+      /* grid-column: span 2; */
     }
   }
 }
